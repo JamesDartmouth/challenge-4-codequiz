@@ -1,0 +1,55 @@
+* {box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: dashed red 1px;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    font-size: 20px;
+  
+}
+
+#high{
+    padding: 10px;
+    justify-content: left;
+    text-decoration: none;
+    color: blueviolet;
+    
+}
+#time, #counter{
+    padding: 10px;
+    justify-content: right;
+    color:blueviolet
+}
+
+#intro{
+    text-align: center;
+    margin-top: 100px;
+}
+#start{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    width:120px;
+    height: 40px;
+    font-size: 18px;
+}
+
+#start:hover{
+    background-color: rgb(192, 130, 223);
+}
+
+#answers{
+    flex-direction: column;
+}
+
+button{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    width:160px;
+    height: 60px;
+    font-size: 18px;
+}
+  
