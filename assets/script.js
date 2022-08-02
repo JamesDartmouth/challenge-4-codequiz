@@ -1,10 +1,9 @@
 var startGame = document.querySelector("#start");
 var counterEl = document.querySelector("#counter");
-//var score=document.querySelector("")
-//var name=document.querySelector("")..firs and last initial
 var question = document.querySelector("#question")
 var slidesEl = document.querySelector("#slides")
 var highScore =document.querySelector("#high")
+var counter;
 
 var gameOver = document.createElement('h3');
 var score = document.createElement('p');
@@ -64,16 +63,14 @@ function nextQuestion() {
 }
 
 
-
-// ////NEW CODE
 startGame.addEventListener('click', function () {
 
     nextQuestion();
 
-    var counter = setInterval(function () {
+    counter = setInterval(function () {
         counterEl.textContent = time;
         time--;
-        if (time === -1) {
+        if (time <= 0) {
             
             clearInterval(counter);
 
@@ -81,11 +78,7 @@ startGame.addEventListener('click', function () {
         }
     }, 1000)
 })
-// if (currentQuestionNum = library.length) {
 
-//     endGame();
-//     }
-// })
 
 slidesEl.addEventListener('click', function (event) {
     if (event.target.matches('li')) {
@@ -101,13 +94,13 @@ slidesEl.addEventListener('click', function (event) {
             alert("Incorrect.")
             //play sound
         }
-        if (currentQuestionNum < library.length) {
-            currentQuestionNum++;
-            nextQuestion();
 
+        currentQuestionNum++;
+        if (currentQuestionNum == library.length) {
+             endGame()
+            
         } else {
-            ///stop timer
-            endGame()
+           nextQuestion();
         }
 
     }
@@ -115,47 +108,14 @@ slidesEl.addEventListener('click', function (event) {
 
 function endGame() {
 
-    slidesEl.innerHTML = '';
-
-    var gameOver = document.createElement('h2');
-    var score = document.createElement('div');
-    var name = document.createElement('div')
-    var nameInput = document.createElement('input')
-    var exitGame = document.createElement ('button')
-
-    nameInput.setAttribute("id", initials)
-
-    slidesEl.appendChild(gameOver);
-    gameOver.appendChild(score);
-    score.appendChild(nameInput)
-    nameInput.appendChild(exitGame)
+    clearInterval(counter);
+    localStorage.setItem('score', time)
+    window.location.replace("endgame.html")
 
 
-    gameOver.textcontent = "Game Over"
-    score.textContent = right + " out of 5 questions correct."
-    name.textContent = "Enter Initials"
-    exitGame.textContent = "Exit Game"
-  
-    localStorage.setItem('initials', userName)
-    localStorage.setItem(score)
-
-    exitGame.addEventListener('click' function(){
-        ///back to beginning screen
-    })
-
-    
 }
 
-
-highScore.addEventListener('click', function (event) {
-    slidesEl.innerHTML = '';
-
-    var scoreHistory = document.createElement('h2')
-    var pastScores = documnet.createElement('div')
-    slidesEl.appendChild(scoreHistory);
-    scoreHistory.textContent= "High Scores"
-    scoreHistory.appendChild(pastScores);
+    
 
 
 
-})

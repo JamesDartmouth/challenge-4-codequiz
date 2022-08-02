@@ -1,6 +1,6 @@
 * {box-sizing: border-box;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    border: dashed red 1px;
+   
 }
 
 header{
@@ -53,3 +53,13 @@ button{
     font-size: 18px;
 }
   
+
+li{
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    width:160px;
+    height: 60px;
+    font-size: 18px;
+    text-align: center;
+    border: solid black 1px;
