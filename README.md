@@ -10,14 +10,18 @@ Code Quiz:
 4) Game is over when all questions are answered or timer = 0.
 5) Score history is saved with user initials
 
+NOTES:
+
+1) Originally had answer choices as buttons but changed to list items because of difficulties with html/flexbox
+2) Originally tried to have 'high score'and 'game over/user name input' screen as seperate 'popup' screen on same webpage, but could not get this to work, so made each of these a seperate webpage.
 
 
 ## Table of Contents (Optional)
 
 Code Quiz
 
-Deployed wesbite: 
-Github website: 
+Deployed wesbite: https://jamesdartmouth.github.io/challenge-4-codequiz/
+Github website: https://github.com/JamesDartmouth/challenge-4-codequiz.git
 
 ## Installation
     None
